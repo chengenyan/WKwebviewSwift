@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+        <script type="text/javascript"></script>
+
+		<title></title>
+      
+	
+		<style type="text/css">
+		   
+	 body{
+        margin:0;
+        background-size:100vw 100vh;
+        max-height: 100vh;
+      }
+      #numberhao {
+      	margin-top: 62vh;
+      	margin-left: 20vw;
+      	margin-right: 20vw;
+         width: 60vw !important;
+         height: 8vw;
+      }
+       #labelhao {
+        margin-top: 62vh;
+      	margin-left: 20vw;
+      	margin-right: 20vw;
+         width: 60vw !important;
+         height: 8vw;
+         color: rgba(93,93,93,0.9);
+         text-align: center;
+         font-size: smaller;
+         
+      }
+      #imagehao {
+          margin-top: 10vh;
+          margin-left: 20vw;
+          margin-right: 20vw;
+          width: 60vw !important;
+          height: 8vw;
+          color: rgba(93,93,93,0.9);
+          text-align: center;
+          font-size: smaller;
+      }
+		</style>
+	</head>
+	<body  class="mui-content">
+			<div id="labelhao" >推荐新用户注册，送他/她10元红包您同时也获得10元红包</div>
+<!--			<a id="anzhuo" href="sharebtnclick" >点击分享</a>-->
+            <div id="#imagehao" onclick="sharebtnclick()">JS调用OC</div>
+	</body>
+	<script>
+
+    //tap是手势,图片上面添加的
+      //添加点击事件
+   
+     $('#imagehao').on('click', function(e){
+       alert("====");
+       	     try {
+              webkit.messageHandlers.sharebtnclick.postMessage("I Love you");
+        } catch(err) {
+            console.log('The native context does not exist yet');
+        }
+       
+        });
+        function sharebtnclick(){
+          
+            try {
+                webkit.messageHandlers.sharebtnclick.postMessage("I Love you");
+            } catch(err) {
+                console.log('The native context does not exist yet');
+            }
+        }
+        function appbtnclick(){
+             alert("app调用h5");
+        }
+    //获取url的参数
+    function getUrlData(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	   if(r != null) return decodeURI(r[2]);
+      	return null;
+    }
+
+	</script>
+
+</html>

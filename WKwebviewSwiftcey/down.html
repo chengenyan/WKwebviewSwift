@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>好友邀请</title>
+		
+		<style type="text/css">
+	      body{
+           margin:0;
+          
+           background-size:100vw 100vh;
+          }
+       #labelhao {
+      	margin-top: 65vh;
+      	margin-left: 20vw;
+      	margin-right: 20vw;
+         width: 60vw !important;
+         height: 8vw;
+         color: rgba(93,93,93,0.9);
+         text-align: center;
+         font-size:large;
+         
+      }
+      #imagehao {
+      	margin-top: 30px;
+      	margin-left: 30vw;
+      	margin-right: 30vw;
+         width: 40vw !important;
+         height: 12vw;
+      }
+		</style>
+	</head>
+
+	<body class="mui-content" >
+			
+			<div id="labelhao" >10元红包已发到您的账户</div>
+			<div id="imagehao" >点击分享</div>
+	</body>
+	
+	<script>
+	window.addEventListener('touchmove', evt => evt.preventDefault())
+		var numberstr=getUrlData("type");
+		if (numberstr=="no") {
+			                        let labelhao=document.getElementById("labelhao");
+			                        labelhao.textContent="该手机号已领取红包";
+
+		}
+	  $('#imagehao').on('tap', function(e){
+           down();//去领取成功界面
+      });
+      
+       //alert('是否是Android：'+isAndroid);
+       function down(){
+       	window.location.href = "https://a.app.qq.com/o/simple.jsp?pkgname=com.ccclubs.changan";
+//     	 var u = navigator.userAgent;
+//     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+//     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+//     
+//     if(isAndroid){
+//     
+//        window.location.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.ccclubs.changan";
+//        //window.location.href = "http://app.z.ccclubs.com/app/apk/comccclubsp2p_"++".apk";
+//        //plus.runtime.openURL("http://app.z.ccclubs.com/app/apk/comccclubsp2p.apk");
+//     }else if(isiOS){
+//     	  	  window.location.href = "https://itunes.apple.com/cn/app/%E9%95%BF%E5%AE%89%E5%87%BA%E8%A1%8C/id1136083257?mt=8";
+//
+////         testApp("changanTravel://com.ccclubs.changan/");
+////       window.location.href = "https://itunes.apple.com/cn/app/%E9%95%BF%E5%AE%89%E5%87%BA%E8%A1%8C/id1136083257?mt=8";
+//       //plus.runtime.openURL("https://itunes.apple.com/us/app/zhong-che-fen-xiang/id1071523058?l=zh&ls=1&mt=8");
+//         // alert("苹果设备");
+//     }else{
+//        alert("暂无当前设备");
+//     }
+       }
+    //获取url的参数
+    function getUrlData(name) {
+	     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	     var r = window.location.search.substr(1).match(reg);
+	     if(r != null) return decodeURI(r[2]);
+        	return null;
+     }
+  
+  
+   
+	</script>
+
+</html>

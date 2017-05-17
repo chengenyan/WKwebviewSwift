@@ -1,0 +1,266 @@
+/*
+ * 定义body
+ */
+
+/*.mui-content {
+	background: #FFFFFF;
+}*/
+
+@media screen and (max-width:321px) {
+	body {
+		font-size: 16px;
+	}
+	.fontsize10 {
+		font-size: 7px;
+	}
+	.fontsize12 {
+		font-size: 9px;
+	}
+	.fontsize13 {
+		font-size: 10px;
+	}
+	.fontsize14 {
+		font-size: 11px;
+	}
+	.fontsize15 {
+		font-size: 12px;
+	}
+	.fontsize16 {
+		font-size: 13px;
+	}
+	.fontsize17 {
+		font-size: 14px;
+	}
+	.fontsize18 {
+		font-size: 15px;
+	}
+	.fontsize19 {
+		font-size: 16px;
+	}
+	.fontsize20 {
+		font-size: 17px;
+	}
+	.fontsize21 {
+		font-size: 18px;
+	}
+	.fontsize22 {
+		font-size: 19px;
+	}
+	.fontsize23 {
+		font-size: 20px;
+	}
+	.fontsize30 {
+		font-size: 27px;
+	}
+	.fontsize60 {
+		font-size: 57px;
+	}
+}
+
+@media screen and (min-width:321px) and (max-width:400px) {
+	body {
+		font-size: 17px;
+	}
+	.fontsize10 {
+		font-size: 8px;
+	}
+	.fontsize12 {
+		font-size: 10px;
+	}
+	.fontsize13 {
+		font-size: 11px;
+	}
+	.fontsize14 {
+		font-size: 12px;
+	}
+	.fontsize15 {
+		font-size: 13px;
+	}
+	.fontsize16 {
+		font-size: 14px;
+	}
+	.fontsize17 {
+		font-size: 15px;
+	}
+	.fontsize18 {
+		font-size: 16px;
+	}
+	.fontsize19 {
+		font-size: 17px;
+	}
+	.fontsize20 {
+		font-size: 18px;
+	}
+	.fontsize21 {
+		font-size: 19px;
+	}
+	.fontsize22 {
+		font-size: 20px;
+	}
+	.fontsize23 {
+		font-size: 21px;
+	}
+	.fontsize30 {
+		font-size: 28px;
+	}
+	.fontsize60 {
+		font-size: 58px;
+	}
+}
+
+@media screen and (min-width:400px) {
+	body {
+		font-size: 19px;
+	}
+	.fontsize10 {
+		font-size: 10px;
+	}
+	.fontsize12 {
+		font-size: 12px;
+	}
+	.fontsize13 {
+		font-size: 13px;
+	}
+	.fontsize14 {
+		font-size: 14px;
+	}
+	.fontsize15 {
+		font-size: 15px;
+	}
+	.fontsize16 {
+		font-size: 16px;
+	}
+	.fontsize17 {
+		font-size: 17px;
+	}
+	.fontsize18 {
+		font-size: 18px;
+	}
+	.fontsize19 {
+		font-size: 19px;
+	}
+	.fontsize20 {
+		font-size: 20px;
+	}
+	.fontsize21 {
+		font-size: 21px;
+	}
+	.fontsize22 {
+		font-size: 22px;
+	}
+	.fontsize23 {
+		font-size: 23px;
+	}
+	.fontsize30 {
+		font-size: 30px;
+	}
+	.fontsize60 {
+		font-size: 60px;
+	}
+}
+
+
+/*
+ * 颜色酷
+ */
+
+.color-999999 {
+	color: #999999;
+}
+
+.color-666666 {
+	color: #666666 !important;
+}
+
+.color-FF6021 {
+	color: #FF6021;
+}
+
+.color-333333 {
+	color: #333333;
+}
+
+.color-E52E2C {
+	color: #E52E2C;
+}
+
+.color-FFFFFF {
+	color: #FFFFFF;
+}
+
+.color-20B2FF {
+	color: #20B2FF;
+}
+
+.color-979797 {
+	color: #979797;
+}
+
+.color-BBBBBB {
+	color: #BBBBBB;
+}
+
+.color-F96268 {
+	color: #F96268;
+}
+
+.color-4A4A4A {
+	color: #4A4A4A;
+}
+
+.color-2obbfc {
+	color: #20bbfc;
+}
+
+.color-18a64f {
+	color: #18a64f;
+}
+
+.color-d6493d {
+	color: #d6493d;
+}
+
+.color-474747 {
+	color: #474747;
+}
+
+.color-FC6430 {
+	color: #FC6430;
+}
+
+.color-3498DB {
+	color: #3498DB;
+}
+
+.color-FAFAFA {
+	color: #FAFAFA;
+}
+
+.color-27A60A {
+	color: #27A60A;
+}
+
+
+/*
+ * 描边酷
+ */
+
+.border-top {
+	border-top: 1px solid;
+}
+
+.border-left {
+	border-top: 1px solid;
+}
+
+.border-bottom {
+	border-bottom: 1px solid;
+}
+
+.border-right {
+	border-right: 1px solid;
+}
+
+.border-DDDDDD {
+	border-color: #DDDDDD;
+}

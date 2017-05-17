@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>好友邀请</title>
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/font_size.css" />
+	
+		<style type="text/css">
+		body{
+        margin:0;
+        background:url(../img/bgimg.png) no-repeat;
+        background-size:100vw 100vh;
+          }
+      #numberhao {
+      	margin-top: 63vh;
+      	margin-left: 20vw;
+      	margin-right: 20vw;
+         width: 60vw !important;
+         height: 10vw;
+      }
+       #labelhao {
+      	margin-top: 10px;
+      	margin-left: 20vw;
+      	margin-right: 20vw;
+         width: 60vw !important;
+         height: 8vw;
+         color: rgba(93,93,93,0.9);
+         text-align: center;
+         font-size: smaller;
+         
+      }
+      #imagehao {
+      	margin-top: 30px;
+      	margin-left: 30vw;
+      	margin-right: 30vw;
+         width: 40vw !important;
+         height: 12vw;
+      }
+		</style>
+	</head>
+	<body  class="mui-content">
+			<input type="tel" id="numberhao" maxlength="11" placeholder="请输入手机号"/>	
+			<div id="labelhao" >接受朋友邀请，体验长安出行您将立即获得10元红包</div>
+			<div id="imagehao" >点击分享</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/reset.js"></script>
+	<script src="../js/app.js"></script>
+	<script src="../js/jquery-1.11.1.js"></script>
+	<script>
+	
+		var numberstr="";
+		$('#imagehao').on('tap', function(e){
+            alert("ios");
+           //down();//去领取成功界面
+        });
+		$('.mui-content').on('tap', function(e){
+	        document.activeElement.blur();
+    
+        });
+		
+        jQuery('#numberhao').keyup(function() {
+         btnchange();
+        });
+        function btnchange(){
+        	   numberstr=mui("#numberhao")[0].value;
+                        let imageh=document.getElementById("imagehao");
+              if (numberstr.length == 11) {
+              	imageh.src="../img/button_immediately.png";
+              }else{
+              	              	imageh.src="../img/button_unonclick.png";
+              }
+       
+        }
+	   var u = navigator.userAgent;
+       var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+       var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+       //alert('是否是Android：'+isAndroid);
+       function down(){
+       	 numberstr=mui("#numberhao")[0].value;
+       	 if (numberstr.length == 11) {//判断位数,再请求数据
+       	 	//getUrlData("tel")获取传过来的数据
+       	 	 registerSubmit();
+		   // window.location.href="down.html?type=no";
+       	    }
+       }
+    //获取url的参数
+    function getUrlData(name) {
+	var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+	var r = window.location.search.substr(1).match(reg);
+	if(r != null) return decodeURI(r[2]);
+	return null;
+     }
+    
+		function registerSubmit(){
+		   
+			var aj = $.ajax( {  
+				    url:'../official/submitInvitation.ashx',// 跳转到 action  
+				    data:{  
+				        "invitation_code":getUrlData("token"),
+				        "mobile":numberstr
+				    },  
+				    type:'post',  
+				    cache:false,  
+				    dataType:'json',  
+				    success:function(json) {  
+				          if(json.code=="100"){
+						alert("手机号无效");
+				          }else if(json.code=="101"){
+				            	 alert("领取失败");
+						//window.location.href="down.html?type=no";
+                           		  }else if(json.code=="102"){
+                            			alert("手机号不能为空");
+                           			//window.location.href="down.html?type=true";
+                          		  }else if(json.code==103){
+                            			//已经领取的
+                            			window.location.href="down.html?type=no";
+                          		  }else if(json.code=="9999"){
+                            			 alert(json.text);
+                          		  }else{
+                            			window.location.href="down.html?type=true";
+                           		  }
+				        
+				     },  
+				     error : function() {
+				          alert("异常！");  
+				     }  
+				});
+		}	
+		
+
+
+	</script>
+
+</html>
